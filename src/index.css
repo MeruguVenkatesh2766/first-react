@@ -1,0 +1,31 @@
+.container1{
+  background-color: aliceblue;
+  margin: 50px;
+}
+.container{
+  background-color:rgb(177, 231, 193);
+  margin: 100px;
+}
+.container2{
+ width: 450px;
+ float: left;
+ margin:10px;
+ padding: 10px;
+ font-size: 20px;
+
+}
+.container3{
+  width: 300px;
+  float: left;
+  margin:30px;
+  padding: 10px;
+  font-size: 20px;
+ 
+ }
+.main{
+  display: flex;
+  background-color:rgb(96, 96, 232)
+}
+select{
+  width: 200px;
+}
