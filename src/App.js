@@ -1,31 +1,30 @@
-import React from 'react';
-import { useEffect,useState } from 'react';
+import React, { useState } from 'react';
+import { useEffect} from 'react';
 import axios from 'axios';
-import RegistrationForm from './components/RegistrationForm';
 let App = () => {
-  const [myData,setData] = useState([])
-  
-  const url = "https://countriesnow.space/api/v0.1/countries/states"
-  
+  const[val,setVal]=useState([])
+  const[data,setData]=useState([])
   useEffect(()=>{
-    axios.get(url)
-    .then((res)=> setData(res.data.data))
-    .catch(e=>{
-    console.log("e",e);
-  })
+    axios
+    .get("https://jsonplaceholder.typicode.com/photos")
+    .then(res=>setData(res.data))
   },[])
+
+  const change=(e)=>{
+    setVal(e.target.value)
+    console.log(val)
+  }
 
   return (
     <div className='App'>
-      <RegistrationForm/>
+      <input type="text" value={val} onChange={change} />
       {
-    myData.map(item =>{
-      const{name,iso2}=item;
-      const ab =[];
-      ab.push({name});
-      console.log(ab[0].name);
-    })
-  }
+        data.map((item,index)=>{
+          return(
+            <p key={item.id}>{item.id}</p>
+          );
+        })
+      }
     </div>
   );
 }
